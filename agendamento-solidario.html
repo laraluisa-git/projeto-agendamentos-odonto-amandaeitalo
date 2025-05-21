@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento Solidário</title>
+  <style>
+    .faixa-titulo {
+      background-color: #64c7d6;
+      padding: 20px 0;
+      text-align: center;
+      border-top: 1px solid #3a7b83;
+      border-bottom: 4px solid white;
+    }
+
+    .faixa-titulo h1 {
+      color: white;
+      font-family: 'Lora', serif;
+      font-size: 28px;
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container-agendamento-solidario {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .form-box {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 380px;
+      flex-shrink: 0;
+      order: 1;
+    }
+
+    .form-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-box label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .form-box input,
+    .form-box select,
+    .form-box textarea {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background-color: #f3986d;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .btn-primary:hover {
+      background-color: #e07c4a;
+    }
+
+    .btn-secondary {
+      background-color: #ccc;
+      color: #333;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #bbb;
+    }
+
+    .info-box {
+      max-width: 500px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      order: 2;
+    }
+
+    .info-box h2 {
+      font-family: 'Lora', serif;
+      font-size: 24px;
+      color: #007f94;
+      margin-bottom: 15px;
+    }
+
+    .info-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container-agendamento-solidario {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .form-box, .info-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- FAIXA SUPERIOR COM TÍTULO -->
+  <div class="faixa-titulo">
+    <h1>AGENDE SUA CONSULTA SOLIDÁRIA</h1>
+    <p>Este é um projeto social com vagas limitadas. As inscrições são analisadas por ordem de envio e prioridade social.</p>
+  </div>
+  <div class="container-agendamento-solidario">
+    <!-- FORMULÁRIO À ESQUERDA -->
+    <div class="form-box">
+      <form id="formAgendamento">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="NIS">Insira o NIS do seu CADÚNICO:</label>
+        <input type="text" id="NIS" name="NIS" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <label for="especialidade">Especialidade:</label>
+        <select id="especialidade" name="especialidade" required>
+          <option value="italo">Dr Ítalo Sarto - Periodontista e Implantodontista</option>
+          <option value="amanda">Dra Amanda Vasconcelos - Odontopediatra e Ortodontista</option>
+        </select>
+
+        <label for="data">Data disponível:</label>
+        <select id="data" name="data" required>
+          <option value="">Selecione uma data</option>
+        </select>
+
+        <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes" rows="3" placeholder="Descreva sintomas ou dúvidas..."></textarea>
+
+      <button type="submit" class="btn-primary">Confirmar Consulta</button>
+
+
+      </form>
+      <p id="mensagem" style="display:none; color: green;">Estamos analisando e entraremos em contato.</p>
+    </div>
+
+    <!-- TEXTO À DIREITA -->
+    <div class="info-box">
+      <h2>Como funciona o agendamento solidário?</h2>
+      <p>Na clínica Italo & Amanda - Odontologia Especializada, acreditamos que todos merecem acesso à saúde bucal de qualidade. Pensando nas pessoas em situação de vulnerabilidade social que necessitam de atendimento especializado, criamos o Programa Agendamento Solidário – uma iniciativa que oferece consultas odontológicas gratuitas com nossas especialidades.</p>
+      <h2>Quem pode participar?</h2>
+      <p>O Agendamento Solidário é voltado para pessoas em situação de vulnerabilidade social. Para participar, é necessário apresentar, no momento da inscrição, Número do CADÚNICO e NIS (Número de Identificação Social).</p>
+      <h2>Caso eu não consiga o atendimento?</h2>
+      <P>A Universidade de Fortaleza oferece atendimento odontológico gratuito e de excelente qualidade. Caso você não consiga agendar sua consulta conosco, não se preocupe — clique no botão abaixo para saber como obter sua consulta com a UNIFOR. </P>
+      <button id="btnRedirect" class="btn-secondary" onclick="window.location.href='https://unifor.br/clinicas-odontologicas'">Saiba mais sobre atendimentos gratuitos</button>
+    </div>
+  </div>
+
+  <!-- SCRIPT: Gera 7 dias úteis a partir de hoje -->
+  <script>
+    function gerarDatasUteis(qtd) {
+      const hoje = new Date();
+      const datas = [];
+      let contador = 0;
+
+      while (datas.length < qtd) {
+        const diaSemana = hoje.getDay();
+        if (diaSemana !== 0 && diaSemana !== 6) { // 0 = domingo, 6 = sábado
+          const dataFormatada = hoje.toLocaleDateString('pt-BR', {
+            weekday: 'long',
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+          });
+          datas.push(dataFormatada);
+        }
+        hoje.setDate(hoje.getDate() + 1);
+        contador++;
+        if (contador > 30) break; // segurança para evitar loop infinito
+      }
+
+      return datas;
+    }
+
+    function preencherSelectDatas() {
+      const select = document.getElementById("data");
+      const datas = gerarDatasUteis(7);
+
+      datas.forEach(data => {
+        const option = document.createElement("option");
+        option.value = data;
+        option.textContent = data;
+        select.appendChild(option);
+      });
+    }
+
+    // Exibir mensagem após o envio do formulário
+    document.getElementById("formAgendamento").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar o envio do formulário
+      document.getElementById("mensagem").style.display = "block"; // Exibir mensagem
+    });
+
+    // Executa ao carregar a página
+    document.addEventListener("DOMContentLoaded", preencherSelectDatas);
+  </script>
+</body>
+</html>

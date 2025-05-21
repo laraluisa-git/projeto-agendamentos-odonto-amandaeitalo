@@ -1,0 +1,241 @@
+/* Fonte base e reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Layout principal: imagem à esquerda, conteúdo à direita */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que o conteúdo quebre linha em telas pequenas */
+  min-height: 100vh;
+}
+
+/* Lado esquerdo - Imagem */
+.image-side {
+  width: 50%;
+  height: auto;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lado direito - Conteúdo */
+.content-side {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Permite rolar o conteúdo, se maior que a tela */
+}
+
+/* Box do título */
+.title-box {
+  background-color: #d29c75;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Lora', serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title-box h1 {
+  font-size: 3.5em;
+  margin: 0;
+}
+
+.title-box small {
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Texto institucional */
+.texto h2 {
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.texto p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Botões */
+.botoes {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-right: 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn.agendamento {
+  background-color: #d29c75;
+}
+
+.btn.agendamento:hover {
+  background-color: #bb8057;
+}
+
+.btn.solidario {
+  background-color: #33c1cd;
+}
+
+.btn.solidario:hover {
+  background-color: #2aa5b2;
+}
+
+/* Aviso Legal */
+.aviso-container {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.btn-aviso {
+  background-color: #fcd269;
+  color: black;
+  font-weight: 600;
+}
+
+.aviso-texto,
+#legalNotice {
+  margin-top: 20px;
+  background-color: #fff7d1;
+  border: 1px solid #f4cc70;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* Oculta a div por padrão */
+.hidden {
+  display: none;
+}
+
+/* Estilo do botão de aviso */
+#legalNoticeBtn {
+  background-color: #fcd269;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#legalNoticeBtn:hover {
+  background-color: #fbc93d;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-side,
+  .content-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .title-box h1 {
+    font-size: 2.5em;
+  }
+
+  .title-box small {
+    font-size: 1.2em;
+  }
+
+  .botoes {
+    justify-content: center;
+  }
+}
+.depoimentos {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 0; /* menor que o aviso legal */
+}
+
+.depoimentos blockquote {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 20px;
+  border-left: 4px solid #d29c75;
+  padding-left: 16px;
+}
+
+.depoimentos span {
+  display: block;
+  font-size: 0.9em;
+  margin-top: 8px;
+  color: #777;
+}
+
+/* Garante que o aviso legal apareça acima */
+#legalNotice {
+  position: relative;
+  z-index: 10;
+}
+footer {
+  position: fixed;       /* Fixa o rodapé na tela */
+  bottom: 10px;          /* Distância do fundo da tela */
+  right: 10px;           /* Distância da borda direita da tela */
+  font-size: 0.8em;      /* Tamanho da fonte reduzido */
+  color: #666;           /* Cor de texto mais suave */
+  background-color: transparent; /* Fundo transparente */
+  border: none;          /* Remove qualquer borda */
+  padding: 5px 10px;     /* Menos espaço ao redor do texto */
+  z-index: 1000;         /* Fixa o rodapé no topo dos outros elementos */
+}
+
+footer a {
+  text-decoration: none;  /* Remove o sublinhado */
+  color: #666;            /* Cor do link suave */
+  font-weight: normal;    /* Normaliza o peso da fonte */
+  display: inline-flex;   /* Alinha o ícone e o texto lado a lado */
+  align-items: center;
+}
+
+footer a:hover {
+  color: #d29c75;         /* Cor do link ao passar o mouse */
+}
+
+footer i {
+  font-size: 14px;        /* Tamanho pequeno do ícone */
+  margin-left: 5px;       /* Espaço entre o ícone e o nome */
+}
+ 
