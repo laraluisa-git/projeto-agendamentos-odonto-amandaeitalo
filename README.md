@@ -24,6 +24,6 @@ Através deste projeto, busca-se aprimorar habilidades em design de interfaces, 
 Este projeto é uma iniciativa educacional e não realiza atendimentos reais. Nenhum dado inserido no sistema será utilizado para fins comerciais ou de atendimento odontológico.
 
 ## Acesso ao Protótipo:
-Você pode explorar o protótipo acessando o site oficial:  
-https://larafelix-git.github.io/projeto-agendamentos/
+Você pode explorar o protótipo acessando o site oficial de teste:  
+(https://laraluisa-git.github.io/projeto-agendamentos-odonto-amandaeitalo/)
 
