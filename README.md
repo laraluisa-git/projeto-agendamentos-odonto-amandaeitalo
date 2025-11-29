@@ -1,4 +1,4 @@
-# 🦷 Projeto Agendamentos – Amanda & Ítalo Odontologia
+# 🦷 Projeto Agendamentos – Amanda & Ítalo Odontologia/ Odontologia Solidária
 
 ## Descrição:
 O "Projeto Agendamentos" é um protótipo acadêmico desenvolvido na disciplina *Ideação para Soluções Tecnológicas* do curso de Análise e Desenvolvimento de Sistemas. 
